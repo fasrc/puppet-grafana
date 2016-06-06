@@ -37,7 +37,7 @@ class grafana::config {
 
   if $::grafana::ldap_cfg {
     $ldap_cfg = $::grafana::ldap_cfg
-    file {  $::ldap_cfg_location:
+    file {  $::grafana::ldap_cfg_location:
       ensure  => present,
       content => template('grafana/ldap.toml.erb'),
     }
