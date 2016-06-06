@@ -37,9 +37,9 @@ class grafana::config {
 
   if $::grafana::ldap_cfg {
     $ldap_cfg = $::grafana::ldap_cfg
-    file { '/etc/grafana/ldap.toml':
+    file {  $::ldap_cfg_location:
       ensure  => present,
-      content => inline_template("<%= require 'toml'; @cfg = @ldap_cfg.sort_by{ |k, v| k } ; Hash[*@cfg]; TOML::Generator.new(@cfg).body %>\n"),
+      content => template('grafana/ldap.toml.erb'),
     }
   }
 }

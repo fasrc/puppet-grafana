@@ -73,6 +73,7 @@ class grafana (
   $cfg_location        = $::grafana::params::cfg_location,
   $cfg                 = $::grafana::params::cfg,
   $ldap_cfg            = $::grafana::params::ldap_cfg,
+  $ldap_cfg_location   = $::grafana::params::ldap_cfg_location,
   $container_cfg       = $::grafana::params::container_cfg,
   $container_params    = $::grafana::params::container_params,
   $data_dir            = $::grafana::params::data_dir,

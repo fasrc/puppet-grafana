@@ -15,6 +15,7 @@ class grafana::params {
   $install_dir         = '/usr/share/grafana'
   $install_method      = 'package'
   $ldap_cfg            = false
+  $ldap_cfg_location   = '/etc/grafana/ldap.toml'
   $manage_package_repo = true
   $package_name        = 'grafana'
   $package_source      = undef

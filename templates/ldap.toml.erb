@@ -1,0 +1,13 @@
+# This file is managed by Puppet, any changes will be overwritten
+
+<%- @ldap_cfg.keys.sort.each do |key|
+  if @ldap_cfg[key].is_a?(Hash) -%>
+
+[<%= key %>]
+    <%- @ldap_cfg[key].keys.sort.each do |valkey| -%>
+<%= valkey %> = <%= @ldap_cfg[key][valkey] %>
+    <%- end -%>
+  <%- else -%>
+<%= key %> = <%= @ldap_cfg[key] %>
+  <%- end
+end -%>
