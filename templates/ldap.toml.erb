@@ -22,10 +22,10 @@ group_search_base_dns = <%= @ldap_cfg_group_search_base_dns %>
 name = "<%= @ldap_cfg_atributes_name %>"
 surname = "<%= @ldap_cfg_atributes_surname %>"
 username = "<%= @ldap_cfg_atributes_username %>"
+member_of = "<%= @ldap_cfg_atributes_member_of %>"
 email = "<%= @ldap_cfg_atributes_email %>"
 
-<%- @ldap_cfg_group_mappings.keys.sort.each do |key|
-  if @ldap_cfg_group_mappings[key].is_a?(Hash) -%>
+<%- @ldap_cfg_group_mappings.keys.sort.each do |key| -%>
 
 [[<%= key %>]]
     <%- @ldap_cfg_group_mappings[key].keys.sort.each do |valkey| -%>
