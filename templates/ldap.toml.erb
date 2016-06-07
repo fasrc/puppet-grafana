@@ -33,9 +33,7 @@ email = "<%= @ldap_cfg_atributes_email %>"
 <%= valkey %> = <%= @ldap_cfg_group_mappings[key][valkey] %>
         <%- else -%>
 <%= valkey %> = "<%= @ldap_cfg_group_mappings[key][valkey] %>"
-        <%- end
-    end -%>
-  <%- else -%>
-<%= key %> = <%= @ldap_cfg_group_mappings[key] %>
-  <%- end
+        <%- end 
+    end 
 end -%>
+
