@@ -75,6 +75,7 @@ class grafana (
   $ldap_cfg                       = $::grafana::params::ldap_cfg,
   $ldap_cfg_location              = $::grafana::params::ldap_cfg_location,
   $ldap_cfg_verbose_logging       = $::grafana::params::ldap_cfg_verbose_logging,
+  $ldap_cfg_host                  = $::grafana::params::ldap_cfg_host,
   $ldap_cfg_port                  = $::grafana::params::ldap_cfg_port ,
   $ldap_cfg_use_ssl               = $::grafana::params::ldap_cfg_use_ssl,
   $ldap_cfg_ssl_skip_verify       = $::grafana::params::ldap_cfg_ssl_skip_verify,
