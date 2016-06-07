@@ -17,6 +17,7 @@ class grafana::params {
   $ldap_cfg                       = false
   $ldap_cfg_location              = '/etc/grafana/ldap.toml'
   $ldap_cfg_verbose_logging       = false
+  $ldap_cfg_host                  = undef  
   $ldap_cfg_port                  = 389
   $ldap_cfg_use_ssl               = false
   $ldap_cfg_ssl_skip_verify       = false
