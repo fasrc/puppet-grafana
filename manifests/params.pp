@@ -33,7 +33,7 @@ class grafana::params {
   $ldap_cfg_atributes_username    = 'sAMAccountName'
   $ldap_cfg_atributes_member_of   = 'memberOf'
   $ldap_cfg_atributes_email       = 'mail'
-  $ldap_cfg_group_mappings        = {}
+  $ldap_cfg_group_mappings        = false
   $manage_package_repo            = true
   $package_name                   = 'grafana'
   $package_source                 = undef
