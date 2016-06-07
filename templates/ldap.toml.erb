@@ -1,13 +1,32 @@
 # This file is managed by Puppet, any changes will be overwritten
+<%- if @ldap_cfg == true -%>
+verbose_logging = <%= @ldap_cfg_verbose_logging %>
 
-<%- @ldap_cfg.keys.sort.each do |key|
-  if @ldap_cfg[key].is_a?(Hash) -%>
+[[servers]]
+host = <%= @ldap_cfg_verbose_logging %>
+port = <%= @ldap_cfg_port %>
+use_ssl = <%= @ldap_cfg_use_ssl %>
+ssl_skip_verify = <%= @ldap_cfg_ssl_skip_verify %>
+bind_dn = <%= @ldap_cfg_bind_dn %>
+bind_password = <%= @ldap_cfg_bind_password %>
+search_filter = <%= @ldap_cfg_search_filter %>
+search_base_dns = <%= @ldap_cfg_search_base_dns %>
+group_search_base_dns = <%= @ldap_cfg_group_search_base_dns %>
 
-[<%= key %>]
-    <%- @ldap_cfg[key].keys.sort.each do |valkey| -%>
-<%= valkey %> = <%= @ldap_cfg[key][valkey] %>
+[servers.attributes]
+name = <%= @ldap_cfg_atributes_name %>
+surname = <%= @ldap_cfg_atributes_surname %>
+username = <%= @ldap_cfg_atributes_username %>
+email = <%= @ldap_cfg_atributes_email %>
+
+<%- @ldap_cfg_group_mappings.keys.sort.each do |key|
+  if @ldap_cfg_group_mappings[key].is_a?(Hash) -%>
+
+[[servers.group_mappings]]
+    <%- @ldap_cfg_group_mappings[key].keys.sort.each do |valkey| -%>
+<%= valkey %> = <%= @ldap_cfg_group_mappings[key][valkey] %>
     <%- end -%>
   <%- else -%>
-<%= key %> = <%= @ldap_cfg[key] %>
+<%= key %> = <%= @ldap_cfg_group_mappings[key] %>
   <%- end
 end -%>
