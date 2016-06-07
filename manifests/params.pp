@@ -21,10 +21,12 @@ class grafana::params {
   $ldap_cfg_port                  = 389
   $ldap_cfg_use_ssl               = false
   $ldap_cfg_ssl_skip_verify       = false
+  $ldap_cfg_root_ca_cert          = undef
   $ldap_cfg_bind_dn               = undef
   $ldap_cfg_bind_password         = undef
   $ldap_cfg_search_filter         = undef
   $ldap_cfg_search_base_dns       = undef
+  $ldap_cfg_group_search_filter   = undef
   $ldap_cfg_group_search_base_dns = undef
   $ldap_cfg_atributes_name        = 'givenName'
   $ldap_cfg_atributes_surname     = 'sn'
