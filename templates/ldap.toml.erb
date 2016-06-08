@@ -26,7 +26,6 @@ member_of = "<%= @ldap_cfg_atributes_member_of %>"
 email = "<%= @ldap_cfg_atributes_email %>"
 
 <%- @ldap_cfg_group_mappings.each do |item| -%>
-
 [[servers.group_mappings]]
 group_dn = "<%= item['group_dn'] %>"
 org_role = "<%= item['org_role'] %>"
